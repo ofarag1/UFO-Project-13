@@ -8,7 +8,6 @@ var tableData = data;
 var tbody = d3.select("tbody");
 var dateInput = d3.select("#datetime");
 
-
 var stateInput = d3.select("#state")
 var cityInput = d3.select("#city");
 var countryInput = d3.select("#country");
@@ -18,10 +17,10 @@ var filterBtn = d3.select("#filter-btn");
 // Add event listener for submit button
 filterBtn.on("click", SubmitButtonClick);
 
-// Set filteredUFO to data initially
+// Set filteredUFO to data
 var filteredUFO = data;
 
-// variable to check whether filter button is clicked or not 
+// Variable to check whether filter button is clicked or not 
 var filterClick = false;
 
 // AddTable renders the filteredUFO to the tbody
@@ -35,7 +34,7 @@ filteredUFO.forEach(function(value){
   })
 })
 }
-// Filter Table Button
+// Filter Table Button handler
 function SubmitButtonClick() {
 // Prevent the page from refreshing
   d3.event.preventDefault();
@@ -46,17 +45,17 @@ function SubmitButtonClick() {
   var filterCity = cityInput.property("value");
   var filterShape = shapeInput.property("value");
 
-// setting the filterClick variable as true when button is clicked
+// Settings the filterClick variable as true when button is clicked
   var filterClick = true;
 
-//Printing the input element in the console
+//Printing the input element
   console.log(filterDate);
   console.log(filterState);
   console.log(filterCountry);
   console.log(filterCity);
   console.log(filterShape);
 
-  //setting the filter condition on date 
+  //Settings the filter condition on date 
   if (filterDate != ""){
     filteredUFO = data.filter(function(sighting) 
     {
@@ -68,7 +67,7 @@ function SubmitButtonClick() {
     filteredUFO = data
   }
 
-   //setting the filter condition on state input field
+   //Settings the filter condition on state input field
   if(filterState != "")
   {
     filteredUFO = filteredUFO.filter(function(sighting)
@@ -79,7 +78,7 @@ function SubmitButtonClick() {
   }
   else{filteredUFO};
 
-   //setting the filter condition on shape input field
+   //Settings the filter condition on shape input field
   if(filterShape != "")
   {
     filteredUFO = filteredUFO.filter(function(sighting)
@@ -90,7 +89,7 @@ function SubmitButtonClick() {
   }
   else{filteredUFO};
 
-   //setting the filter condition on country input field
+   //Settings the filter condition on country input field
   if(filterCountry != "")
   {
     filteredUFO = filteredUFO.filter(function(sighting)
@@ -101,7 +100,7 @@ function SubmitButtonClick() {
   }
   else{filteredUFO};
 
-  //setting the filter condition on city input field
+  //Settings the filter condition on city input field
   if(filterCity != "")
   {
     filteredUFO = filteredUFO.filter(function(sighting)
@@ -120,11 +119,3 @@ function SubmitButtonClick() {
 if(filterClick === false){
   AddTable();
 }
-
-
-
-
-
-    
-   
-
