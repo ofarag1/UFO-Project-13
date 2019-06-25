@@ -7,7 +7,8 @@ var tableData = data;
 // Get references to the tbody element, input field and button using d3 select
 var tbody = d3.select("tbody");
 var dateInput = d3.select("#datetime");
-// step 2 (optional part)
+
+
 var stateInput = d3.select("#state")
 var cityInput = d3.select("#city");
 var countryInput = d3.select("#country");
@@ -34,7 +35,7 @@ filteredUFO.forEach(function(value){
   })
 })
 }
-// Filter Table Button handler
+// Filter Table Button
 function SubmitButtonClick() {
 // Prevent the page from refreshing
   d3.event.preventDefault();
